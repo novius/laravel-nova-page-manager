@@ -9,9 +9,12 @@ return [
         Page::class,
     ],
 
-    'locales' => [
-        'en' => 'English',
-    ],
+    /*
+     * The locales available for your posts. By default, it's the locales defined in your app.'
+     */
+    /*    'locales' => [
+            'en' => 'English',
+    ],*/
 
     'og_image_disk' => 'public',
 

@@ -53,23 +53,6 @@ Some options that you can override are available.
 php artisan vendor:publish --provider="Novius\LaravelNovaPageManager\LaravelNovaPageManagerServiceProvider" --tag="config"
 ```
 
-**Locales**
-
-You can add / remove any locale from config files.
-
-Example if you want 2 languages (FR and EN): 
-
-```php
-// ...
-
-'locales' => [
-    'en' => 'English',
-    'fr' => 'French',
-],
-
-// ...
-```
-
 ## Templates
 
 To add a template, just add your custom class to `templates` array in configuration file.
