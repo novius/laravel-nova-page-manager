@@ -55,6 +55,9 @@ jobs:
           - laravel: 11.*
             carbon: 2.*
             testbench: 9.*
+        exclude:
+          - php: 8.5
+            nova: 4.*
 
     name: phpstan - P${{ matrix.php-versions }} - L${{ matrix.laravel }} - N${{ matrix.nova }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
