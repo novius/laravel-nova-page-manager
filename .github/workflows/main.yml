@@ -51,11 +51,10 @@ jobs:
         include:
           - laravel: 12.*
             carbon: 3.*
+            testbench: 10.*
           - laravel: 11.*
             carbon: 2.*
-        exclude:
-          - laravel: 12.*
-            nova: 4.*
+            testbench: 9.*
 
     name: phpstan - P${{ matrix.php-versions }} - L${{ matrix.laravel }} - N${{ matrix.nova }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
@@ -81,7 +80,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "nesbot/carbon:${{ matrix.carbon }}" "laravel/nova:${{ matrix.nova }}" --no-interaction --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" "nesbot/carbon:${{ matrix.carbon }}" "laravel/nova:${{ matrix.nova }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
       - name: PHPStan Static Analysis
