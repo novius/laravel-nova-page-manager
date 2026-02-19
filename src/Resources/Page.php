@@ -64,11 +64,6 @@ class Page extends Resource
 
     public static $with = ['translationsWithDeleted'];
 
-    public function availableLocales(): array
-    {
-        return config('laravel-nova-page-manager.locales', []);
-    }
-
     /**
      * Get the fields displayed by the resource.
      */
@@ -225,7 +220,7 @@ class Page extends Resource
      */
     protected static function formatRules(NovaRequest $request, array $rules): array
     {
-        $locales = config('laravel-nova-page-manager.locales', []);
+        $locales = static::newModel()->translatableConfig()->available_locales;
         $locale = (count($locales) === 1) ? array_key_first($locales) : $request->get('locale', '');
 
         $replacements = array_filter([

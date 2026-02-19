@@ -19,6 +19,7 @@ use Novius\LaravelMeta\Traits\HasMeta;
 use Novius\LaravelNovaPageManager\Helpers\TemplatesHelper;
 use Novius\LaravelPublishable\Enums\PublicationStatus;
 use Novius\LaravelPublishable\Traits\Publishable;
+use Novius\LaravelTranslatable\Support\TranslatableModelConfig;
 use Novius\LaravelTranslatable\Traits\Translatable;
 use RuntimeException;
 use Spatie\Sluggable\HasSlug;
@@ -85,7 +86,7 @@ class Page extends Model
      */
     protected static function booted(): void
     {
-        static::saving(static function ($page) {
+        static::saving(static function (Page $page) {
             if ($page->exists && $page->id === $page->parent_id) {
                 throw new RuntimeException('Page : parent_id can\'t be same as primary key.');
             }
@@ -94,7 +95,7 @@ class Page extends Model
                 $page->preview_token = Str::random();
             }
 
-            $locales = config('laravel-nova-page-manager.locales', []);
+            $locales = $page->translatableConfig()->available_locales;
             if (empty($page->locale) && count($locales) === 1) {
                 $page->locale = array_key_first($locales);
             }
@@ -158,6 +159,11 @@ class Page extends Model
         }
 
         return $this->_linkableConfig;
+    }
+
+    public function translatableConfig(): TranslatableModelConfig
+    {
+        return new TranslatableModelConfig(config('laravel-nova-page-manager.locales'));
     }
 
     public function getExtrasCasts(): array

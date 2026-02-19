@@ -23,7 +23,7 @@
         "novius/laravel-meta": "^1.0",
         "novius/laravel-nova-field-preview": "^2.0",
         "novius/laravel-nova-publishable": "^3.0",
-        "novius/laravel-nova-translatable": "^1.0",
+        "novius/laravel-nova-translatable": "^2.0",
         "spatie/laravel-sluggable": "^3.4"
     },
     "require-dev": {
@@ -44,6 +44,9 @@
     },
     "scripts": {
         "fmt": [
+            "./vendor/bin/pint -v"
+        ],
+        "cs-fix": [
             "./vendor/bin/pint -v"
         ],
         "lint": [
