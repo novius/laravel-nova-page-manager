@@ -13,7 +13,7 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
-use Laravel\Nova\Resource;
+use Laravel\Nova\Resource as ResourceNova;
 use Novius\LaravelMeta\Traits\NovaResourceHasMeta;
 use Novius\LaravelNovaFieldPreview\Nova\Fields\OpenPreview;
 use Novius\LaravelNovaPageManager\Helpers\TemplatesHelper;
@@ -30,9 +30,9 @@ use Novius\LaravelNovaTranslatable\Nova\Fields\Translations;
 use Novius\LaravelNovaTranslatable\Nova\Filters\LocaleFilter;
 
 /**
- * @extends Resource<PageModel>
+ * @extends ResourceNova<PageModel>
  */
-class Page extends Resource
+class Page extends ResourceNova
 {
     use NovaResourceHasMeta;
 
