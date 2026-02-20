@@ -8,9 +8,7 @@ use Illuminate\Support\Str;
 use Workbench\App\Models\User;
 
 /**
- * @template TModel of \Workbench\App\Models\User
- *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<TModel>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Workbench\App\Models\User>
  */
 class UserFactory extends Factory
 {
@@ -22,7 +20,7 @@ class UserFactory extends Factory
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<TModel>
+     * @var string
      */
     protected $model = User::class;
 
