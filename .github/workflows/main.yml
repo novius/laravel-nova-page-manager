@@ -61,6 +61,9 @@ jobs:
             carbon: 2.*
             testbench: 8.*
             larastan: 2.*
+        exclude:
+          - php-versions: '8.5'
+            nova: 4.*
 
     name: phpstan - P${{ matrix.php-versions }} - L${{ matrix.laravel }} - N${{ matrix.nova }}
 
