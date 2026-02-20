@@ -44,14 +44,11 @@
         }
     },
     "scripts": {
-        "fmt": [
-            "./vendor/bin/pint -v"
-        ],
         "cs-fix": [
             "./vendor/bin/pint -v"
         ],
         "lint": [
-            "@composer fmt -- --test"
+            "@composer cs-fix -- --test"
         ],
         "phpstan": [
             "./vendor/bin/phpstan analyse --memory-limit=1G"
