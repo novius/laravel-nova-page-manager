@@ -23,7 +23,7 @@ use Novius\LaravelTranslatable\Support\TranslatableModelConfig;
 use Novius\LaravelTranslatable\Traits\Translatable;
 use RuntimeException;
 use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+use Spatie\Sluggable\SlugOptions;use function Sodium\randombytes_random16;
 
 /**
  * Class Page
@@ -97,7 +97,7 @@ class Page extends Model
 
             $locales = $page->translatableConfig()->available_locales;
             if (empty($page->locale) && count($locales) === 1) {
-                $page->locale = array_first($locales);
+                $page->locale = Arr::first($locales);
             }
         });
     }

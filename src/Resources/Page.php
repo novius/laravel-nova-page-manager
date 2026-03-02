@@ -3,6 +3,7 @@
 namespace Novius\LaravelNovaPageManager\Resources;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Field;
@@ -221,7 +222,7 @@ class Page extends ResourceNova
     protected static function formatRules(NovaRequest $request, array $rules): array
     {
         $locales = static::newModel()->translatableConfig()->available_locales;
-        $locale = (count($locales) === 1) ? array_first($locales) : $request->get('locale', '');
+        $locale = (count($locales) === 1) ? Arr::first($locales) : $request->get('locale', '');
 
         $replacements = array_filter([
             '{{resourceId}}' => str_replace(['\'', '"', ',', '\\'], '', $request->resourceId),
