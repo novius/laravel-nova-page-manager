@@ -97,7 +97,7 @@ class Page extends Model
 
             $locales = $page->translatableConfig()->available_locales;
             if (empty($page->locale) && count($locales) === 1) {
-                $page->locale = array_key_first($locales);
+                $page->locale = array_first($locales);
             }
         });
     }

@@ -221,7 +221,7 @@ class Page extends ResourceNova
     protected static function formatRules(NovaRequest $request, array $rules): array
     {
         $locales = static::newModel()->translatableConfig()->available_locales;
-        $locale = (count($locales) === 1) ? array_key_first($locales) : $request->get('locale', '');
+        $locale = (count($locales) === 1) ? array_first($locales) : $request->get('locale', '');
 
         $replacements = array_filter([
             '{{resourceId}}' => str_replace(['\'', '"', ',', '\\'], '', $request->resourceId),
