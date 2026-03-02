@@ -23,7 +23,7 @@ use Novius\LaravelTranslatable\Support\TranslatableModelConfig;
 use Novius\LaravelTranslatable\Traits\Translatable;
 use RuntimeException;
 use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;use function Sodium\randombytes_random16;
+use Spatie\Sluggable\SlugOptions;
 
 /**
  * Class Page
