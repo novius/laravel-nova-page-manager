@@ -24,7 +24,7 @@
         "novius/laravel-nova-field-preview": "^2.0",
         "novius/laravel-nova-publishable": "^3.0",
         "novius/laravel-nova-translatable": "^2.0",
-        "spatie/laravel-sluggable": "^3.4"
+        "spatie/laravel-sluggable": "^3.4 | ^4.0"
     },
     "require-dev": {
         "larastan/larastan": "^2.0 | ^3.0",

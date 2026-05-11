@@ -69,7 +69,9 @@ class Page extends Model
 {
     use HasMeta;
     use HasSlug;
-    use Linkable;
+    use Linkable {
+        Linkable::resolveRouteBinding insteadof HasSlug;
+    }
     use Publishable;
     use Translatable;
 
