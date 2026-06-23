@@ -12,8 +12,8 @@ return [
     /*
      * The locales available for your posts. By default, it's the locales defined in your app.'
      */
-    /*    'locales' => [
-            'en' => 'English',
+    /*'locales' => [
+            'en',
     ],*/
 
     'og_image_disk' => 'public',
